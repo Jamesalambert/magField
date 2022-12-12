@@ -6,12 +6,18 @@
 //
 
 import SwiftUI
+import CoreMotion
+
 
 @main
 struct magFieldApp: App {
+        
+    @ObservedObject
+    var viewModel = MagFieldVM()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(model: viewModel)
         }
     }
 }

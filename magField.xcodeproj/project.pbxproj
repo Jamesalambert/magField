@@ -7,13 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA3B1274293E882500458504 /* ComplexModule in Frameworks */ = {isa = PBXBuildFile; productRef = AA3B1273293E882500458504 /* ComplexModule */; };
+		AA3B1276293E882500458504 /* Numerics in Frameworks */ = {isa = PBXBuildFile; productRef = AA3B1275293E882500458504 /* Numerics */; };
+		AA3B1278293E882500458504 /* RealModule in Frameworks */ = {isa = PBXBuildFile; productRef = AA3B1277293E882500458504 /* RealModule */; };
 		AA91561F293D72CD003302AB /* magFieldApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA91561E293D72CD003302AB /* magFieldApp.swift */; };
 		AA915621293D72CD003302AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA915620293D72CD003302AB /* ContentView.swift */; };
-		AA915623293D72D0003302AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA915622293D72D0003302AB /* Assets.xcassets */; };
 		AA915626293D72D0003302AB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA915625293D72D0003302AB /* Preview Assets.xcassets */; };
 		AA915630293D72D1003302AB /* magFieldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA91562F293D72D1003302AB /* magFieldTests.swift */; };
 		AA91563A293D72D1003302AB /* magFieldUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA915639293D72D1003302AB /* magFieldUITests.swift */; };
 		AA91563C293D72D1003302AB /* magFieldUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA91563B293D72D1003302AB /* magFieldUITestsLaunchTests.swift */; };
+		AA915649293D72F8003302AB /* magFieldVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA915648293D72F8003302AB /* magFieldVM.swift */; };
+		AAAE17672947C82D00627922 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAAE17662947C82D00627922 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,13 +41,15 @@
 		AA91561B293D72CD003302AB /* magField.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = magField.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA91561E293D72CD003302AB /* magFieldApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = magFieldApp.swift; sourceTree = "<group>"; };
 		AA915620293D72CD003302AB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		AA915622293D72D0003302AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA915625293D72D0003302AB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AA91562B293D72D1003302AB /* magFieldTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = magFieldTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA91562F293D72D1003302AB /* magFieldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = magFieldTests.swift; sourceTree = "<group>"; };
 		AA915635293D72D1003302AB /* magFieldUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = magFieldUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA915639293D72D1003302AB /* magFieldUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = magFieldUITests.swift; sourceTree = "<group>"; };
 		AA91563B293D72D1003302AB /* magFieldUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = magFieldUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		AA915648293D72F8003302AB /* magFieldVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = magFieldVM.swift; sourceTree = "<group>"; };
+		AAAE17652947C11C00627922 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		AAAE17662947C82D00627922 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +57,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA3B1276293E882500458504 /* Numerics in Frameworks */,
+				AA3B1274293E882500458504 /* ComplexModule in Frameworks */,
+				AA3B1278293E882500458504 /* RealModule in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,9 +104,11 @@
 			isa = PBXGroup;
 			children = (
 				AA91561E293D72CD003302AB /* magFieldApp.swift */,
+				AA915648293D72F8003302AB /* magFieldVM.swift */,
 				AA915620293D72CD003302AB /* ContentView.swift */,
-				AA915622293D72D0003302AB /* Assets.xcassets */,
+				AAAE17662947C82D00627922 /* Assets.xcassets */,
 				AA915624293D72D0003302AB /* Preview Content */,
+				AAAE17652947C11C00627922 /* README.md */,
 			);
 			path = magField;
 			sourceTree = "<group>";
@@ -143,6 +154,11 @@
 			dependencies = (
 			);
 			name = magField;
+			packageProductDependencies = (
+				AA3B1273293E882500458504 /* ComplexModule */,
+				AA3B1275293E882500458504 /* Numerics */,
+				AA3B1277293E882500458504 /* RealModule */,
+			);
 			productName = magField;
 			productReference = AA91561B293D72CD003302AB /* magField.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +231,9 @@
 				Base,
 			);
 			mainGroup = AA915612293D72CD003302AB;
+			packageReferences = (
+				AA3B1272293E882500458504 /* XCRemoteSwiftPackageReference "swift-numerics" */,
+			);
 			productRefGroup = AA91561C293D72CD003302AB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -231,8 +250,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAAE17672947C82D00627922 /* Assets.xcassets in Resources */,
 				AA915626293D72D0003302AB /* Preview Assets.xcassets in Resources */,
-				AA915623293D72D0003302AB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA915621293D72CD003302AB /* ContentView.swift in Sources */,
+				AA915649293D72F8003302AB /* magFieldVM.swift in Sources */,
 				AA91561F293D72CD003302AB /* magFieldApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -583,6 +603,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AA3B1272293E882500458504 /* XCRemoteSwiftPackageReference "swift-numerics" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-numerics.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AA3B1273293E882500458504 /* ComplexModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AA3B1272293E882500458504 /* XCRemoteSwiftPackageReference "swift-numerics" */;
+			productName = ComplexModule;
+		};
+		AA3B1275293E882500458504 /* Numerics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AA3B1272293E882500458504 /* XCRemoteSwiftPackageReference "swift-numerics" */;
+			productName = Numerics;
+		};
+		AA3B1277293E882500458504 /* RealModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AA3B1272293E882500458504 /* XCRemoteSwiftPackageReference "swift-numerics" */;
+			productName = RealModule;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AA915613293D72CD003302AB /* Project object */;
 }
