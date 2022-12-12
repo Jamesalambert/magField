@@ -83,6 +83,7 @@
 		AA915612293D72CD003302AB = {
 			isa = PBXGroup;
 			children = (
+				AAAE17652947C11C00627922 /* README.md */,
 				AA91561D293D72CD003302AB /* magField */,
 				AA91562E293D72D1003302AB /* magFieldTests */,
 				AA915638293D72D1003302AB /* magFieldUITests */,
@@ -108,7 +109,6 @@
 				AA915620293D72CD003302AB /* ContentView.swift */,
 				AAAE17662947C82D00627922 /* Assets.xcassets */,
 				AA915624293D72D0003302AB /* Preview Content */,
-				AAAE17652947C11C00627922 /* README.md */,
 			);
 			path = magField;
 			sourceTree = "<group>";
