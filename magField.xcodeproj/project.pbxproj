@@ -18,6 +18,15 @@
 		AA91563C293D72D1003302AB /* magFieldUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA91563B293D72D1003302AB /* magFieldUITestsLaunchTests.swift */; };
 		AA915649293D72F8003302AB /* magFieldVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA915648293D72F8003302AB /* magFieldVM.swift */; };
 		AAAE17672947C82D00627922 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAAE17662947C82D00627922 /* Assets.xcassets */; };
+		AAAE176929491EBC00627922 /* Measurement Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAE176829491EBC00627922 /* Measurement Types.swift */; };
+		AAAE176A29491EBC00627922 /* Measurement Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAE176829491EBC00627922 /* Measurement Types.swift */; };
+		AAAE176B29491EBC00627922 /* Measurement Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAE176829491EBC00627922 /* Measurement Types.swift */; };
+		AAAE176D29491FB500627922 /* ContentView + controls.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAE176C29491FB500627922 /* ContentView + controls.swift */; };
+		AAAE176E29491FB500627922 /* ContentView + controls.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAE176C29491FB500627922 /* ContentView + controls.swift */; };
+		AAAE176F29491FB500627922 /* ContentView + controls.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAE176C29491FB500627922 /* ContentView + controls.swift */; };
+		AAAE1771294921FC00627922 /* ContentView + export.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAE1770294921FC00627922 /* ContentView + export.swift */; };
+		AAAE1772294921FC00627922 /* ContentView + export.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAE1770294921FC00627922 /* ContentView + export.swift */; };
+		AAAE1773294921FC00627922 /* ContentView + export.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAE1770294921FC00627922 /* ContentView + export.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +59,9 @@
 		AA915648293D72F8003302AB /* magFieldVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = magFieldVM.swift; sourceTree = "<group>"; };
 		AAAE17652947C11C00627922 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AAAE17662947C82D00627922 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AAAE176829491EBC00627922 /* Measurement Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Measurement Types.swift"; sourceTree = "<group>"; };
+		AAAE176C29491FB500627922 /* ContentView + controls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView + controls.swift"; sourceTree = "<group>"; };
+		AAAE1770294921FC00627922 /* ContentView + export.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView + export.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +118,10 @@
 			children = (
 				AA91561E293D72CD003302AB /* magFieldApp.swift */,
 				AA915648293D72F8003302AB /* magFieldVM.swift */,
+				AAAE176829491EBC00627922 /* Measurement Types.swift */,
 				AA915620293D72CD003302AB /* ContentView.swift */,
+				AAAE1770294921FC00627922 /* ContentView + export.swift */,
+				AAAE176C29491FB500627922 /* ContentView + controls.swift */,
 				AAAE17662947C82D00627922 /* Assets.xcassets */,
 				AA915624293D72D0003302AB /* Preview Content */,
 			);
@@ -276,8 +291,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAAE176929491EBC00627922 /* Measurement Types.swift in Sources */,
 				AA915621293D72CD003302AB /* ContentView.swift in Sources */,
 				AA915649293D72F8003302AB /* magFieldVM.swift in Sources */,
+				AAAE176D29491FB500627922 /* ContentView + controls.swift in Sources */,
+				AAAE1771294921FC00627922 /* ContentView + export.swift in Sources */,
 				AA91561F293D72CD003302AB /* magFieldApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,6 +304,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAAE1772294921FC00627922 /* ContentView + export.swift in Sources */,
+				AAAE176E29491FB500627922 /* ContentView + controls.swift in Sources */,
+				AAAE176A29491EBC00627922 /* Measurement Types.swift in Sources */,
 				AA915630293D72D1003302AB /* magFieldTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,7 +316,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA91563C293D72D1003302AB /* magFieldUITestsLaunchTests.swift in Sources */,
+				AAAE176B29491EBC00627922 /* Measurement Types.swift in Sources */,
+				AAAE176F29491FB500627922 /* ContentView + controls.swift in Sources */,
 				AA91563A293D72D1003302AB /* magFieldUITests.swift in Sources */,
+				AAAE1773294921FC00627922 /* ContentView + export.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

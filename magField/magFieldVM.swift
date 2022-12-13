@@ -7,8 +7,6 @@
 
 import Foundation
 import CoreMotion
-import ComplexModule
-
 
 class MagFieldVM: ObservableObject{
         
@@ -26,21 +24,17 @@ class MagFieldVM: ObservableObject{
     @Published
     var isRecording = false {
         didSet{
-            if isRecording {
-                self.recordedData.append(self.columnHeaders)
-            } else {
-                if self.recordedData.count > 2 {
-                    self.hasDataToExport = true
-                }
+            if !isRecording && !self.recordedData.isEmpty {
+                self.hasDataToExport = true
             }
         }
     }
     
     @Published
-    var isZeroed = false{
+    var isZeroed = false {
         didSet{
             if isZeroed {
-                self.zeroedField = self.field ?? Field.zero
+                self.zeroedField = self.field!
             } else {
                 self.zeroedField = Field.zero
             }
@@ -54,18 +48,15 @@ class MagFieldVM: ObservableObject{
     var field: Field? = nil {
         didSet{
             if isRecording {
-                let entry: String = "\(self.dateFormatter.string(from: Date.now)), \(self.field ?? Field.zero)"
-                self.recordedData.append(entry)
+                self.recordField()
             }
         }
     }
     
-    var exportedData : String {
-        return self.recordedData.joined(separator: "\n")
-    }
-    
     @Published
     var zeroedField = Field.zero
+    
+    var recordedData: [Measurement] = []
     
     func playPause() -> Void{
         self.isRunning.toggle()
@@ -83,27 +74,21 @@ class MagFieldVM: ObservableObject{
     func zeroUnzero() {
         self.isZeroed.toggle()
     }
-
     
-    private
-    let columnHeaders = "time (ms), x (μT), y (μT), z (μT), magnitude (μT), direction (rad)"
-    
-    private
-    var recordedData: [String] = []
-    
-    private
-    lazy
-    var dateFormatter = {
-        let o = DateFormatter()
-        o.dateFormat = "A"
-        return o
-    }()
+//    MARK:- Private
     
     private
     lazy
     var motionManager: CMMotionManager = {
         let o = CMMotionManager()
         o.magnetometerUpdateInterval = 1/20
+        return o
+    }()
+    
+    private
+    let dateFormatter = {
+        let o = DateFormatter()
+        o.dateFormat = "A"
         return o
     }()
     
@@ -122,41 +107,13 @@ class MagFieldVM: ObservableObject{
         )
     }
     
+    private
+    func recordField() -> Void{
+        let time: String = self.dateFormatter.string(from: Date.now)
+        self.recordedData.append(Measurement(field: self.field!, timestamp: time))
+    }
+    
     init() {
         self.isRunning = true
     }
-}
-
-
-
-struct Field : Equatable, Encodable, CustomStringConvertible {
-    var x: Double = 0
-    var y: Double = 0
-    var z: Double = 0
-    
-    var magnitude: Double {
-        return sqrt(pow(x, 2) + pow(y, 2) + pow(z, 2))
-    }
-    
-//    in the xy plane
-    var direction: Double {
-        let bField = Complex(x, y).normalized ?? Complex(1, 0)
-        let out = 7 * Complex.root(bField, 7).imaginary
-        return -out
-    }
-    
-    static func +(lhs: Field, rhs: Field) -> Field{
-        return Field(x: lhs.x + rhs.x, y: lhs.y + rhs.y, z: lhs.z + rhs.z)
-    }
-    static func -(lhs: Field, rhs: Field) -> Field{
-        return Field(x: lhs.x - rhs.x, y: lhs.y - rhs.y, z: lhs.z - rhs.z)
-    }
-    
-//    CustomStringConvertible
-    var description: String {
-        return "\(x), \(y), \(z), \(self.magnitude), \(self.direction)"
-    }
-    
-    static
-    let zero = Field(x: 0, y: 0, z: 0)
 }
