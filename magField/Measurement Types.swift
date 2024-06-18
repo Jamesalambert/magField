@@ -8,10 +8,26 @@
 import Foundation
 import ComplexModule
 
-enum Unit : String, CaseIterable {
+enum Unit : String, CaseIterable, CustomStringConvertible, Identifiable {
+    var id: Self {self}
+    
+    var description: String {
+        switch self {
+        case .gauss:
+            return "Gauss"
+        case .milligauss:
+            return "milligauss"
+        case .microTesla:
+            return "microtesla"
+        case .tesla:
+            return "Tesla"
+        }
+    }
+    
     case tesla = "T"
     case microTesla = "μT"
     case gauss = "G"
+    case milligauss = "mG"
 }
 
 
@@ -87,10 +103,16 @@ struct Field : Equatable {
     
     private
     func convert(_ value: Double, to unit: Unit) -> Double {
+        var value = value           // in milli Gauss
         switch unit{
         case .gauss:
-            return value / 100
+            return value / 1000
+        case .milligauss:
+            return value
         case .microTesla:
+            value /= 1000           // to Gauss
+            value /= 10_000         // to Tesla
+            value *= 1_000_000      // to micro Tesla
             return value
         case .tesla:
             return value / 1_000_000

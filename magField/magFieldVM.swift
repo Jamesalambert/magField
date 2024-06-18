@@ -8,6 +8,18 @@
 import Foundation
 import CoreMotion
 
+enum SampleInterval : Double, CaseIterable, Identifiable, CustomStringConvertible {
+    var id: Self {self}
+    
+    case half = 0.5
+    case quarter = 0.25
+    case fifth = 0.2
+    case tenth = 0.1
+    
+    var description: String{
+        return String(self.rawValue)
+    }
+}
 class MagFieldVM: ObservableObject{
         
     @Published
@@ -56,6 +68,12 @@ class MagFieldVM: ObservableObject{
     @Published
     var zeroedField = Field.zero
     
+    var selectedInterval : SampleInterval = .tenth {
+        didSet{
+            self.motionManager.magnetometerUpdateInterval = selectedInterval.rawValue
+        }
+    }
+    
     var recordedData: [Measurement] = []
     
     func playPause() -> Void{
@@ -81,7 +99,7 @@ class MagFieldVM: ObservableObject{
     lazy
     var motionManager: CMMotionManager = {
         let o = CMMotionManager()
-        o.magnetometerUpdateInterval = 1/20
+        o.magnetometerUpdateInterval = self.selectedInterval.rawValue
         return o
     }()
     
@@ -102,6 +120,7 @@ class MagFieldVM: ObservableObject{
                                           y: magnetometerData?.magneticField.y ?? -999,
                                           z: magnetometerData?.magneticField.z ?? -999)
                     self.field = measuredField - self.zeroedField
+//                    print(self.field!) hundreds
                 }
             }
         )

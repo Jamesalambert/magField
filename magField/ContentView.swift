@@ -101,15 +101,19 @@ struct ContentView: View {
             
             Spacer()
             
-            Picker("Units", selection: $unit){
-                ForEach(Unit.allCases, id: \.self){ unit in
-                    Text(unit.rawValue).tag(unit)
+            List{
+                Picker("Sample Interval / s", selection: $model.selectedInterval){
+                    ForEach(SampleInterval.allCases){f in
+                        Text(String(describing: f))
+                    }
+                }
+                Picker("Units", selection: $unit){
+                    ForEach(Unit.allCases){ unit in
+                        Text(String(describing: unit))
+                    }
                 }
             }
-            .pickerStyle(.segmented)
-            .frame(width: CGFloat(Unit.allCases.count)  * 80)
         }
-        
     }
 
     @ViewBuilder
