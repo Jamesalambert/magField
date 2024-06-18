@@ -74,6 +74,8 @@ struct ContentView: View {
     
     var body: some View {
         VStack{
+            settings()
+            
             Spacer()
             
             compass()
@@ -82,37 +84,24 @@ struct ContentView: View {
                     Angle(radians: model.field?.direction ?? 0.0),
                     anchor: UnitPoint.center)
                 .opacity(model.field?.magnitude(in: self.unit) ?? 0.0 > 1.2 * model.zeroedField.magnitude(in: self.unit) ? 1 : 0)
-
+            
             Group{
                 Text(getField(for: .magnitude))
                     .font(.largeTitle)
                     .padding()
-
+                
                 VStack(alignment: .leading){
                     Text("x:\t" + getField(for: .x)).foregroundColor(.red)
                     Text("y:\t" + getField(for: .y)).foregroundColor(.green)
                     Text("z:\t" + getField(for: .z)).foregroundColor(.blue)
                 }.font(.title)
-
+                
             }
             .fontDesign(.monospaced)
             
-            controls()
-            
             Spacer()
             
-            List{
-                Picker("Sample Interval / s", selection: $model.selectedInterval){
-                    ForEach(SampleInterval.allCases){f in
-                        Text(String(describing: f))
-                    }
-                }
-                Picker("Units", selection: $unit){
-                    ForEach(Unit.allCases){ unit in
-                        Text(String(describing: unit))
-                    }
-                }
-            }
+            controls()
         }
     }
 

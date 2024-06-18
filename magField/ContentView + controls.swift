@@ -10,6 +10,23 @@ import SwiftUI
 extension ContentView {
     
     @ViewBuilder
+    func settings() -> some View {
+        List{
+            Picker("Sample Interval / s", selection: $model.selectedInterval){
+                ForEach(SampleInterval.allCases){f in
+                    Text(String(describing: f))
+                }
+            }
+            Picker("Units", selection: $unit){
+                ForEach(Unit.allCases){ unit in
+                    Text(String(describing: unit))
+                }
+            }
+        }
+    }
+    
+    
+    @ViewBuilder
     func controls() -> some View{
         VStack{
             Button(action: {withAnimation(.quickEaseIO){model.zeroUnzero()}}){

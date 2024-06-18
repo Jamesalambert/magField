@@ -15,6 +15,7 @@ enum SampleInterval : Double, CaseIterable, Identifiable, CustomStringConvertibl
     case quarter = 0.25
     case fifth = 0.2
     case tenth = 0.1
+    case hundredth = 0.01
     
     var description: String{
         return String(self.rawValue)
